@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fictional Cricket</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="home-section" id="homeView">
+        <div class="container">
+            <div class="home__content">
+                <h1 class="home__title">Fictional Cricket</h1>
+                <div class="form">
+                    <div class="form__head">
+                        ** In this game, there are by default two names set for two teams Team_A and Team_B. you and your friend can choose a name each by your preference.
+                    </div>
+                    <form class="form__body" id="formData">
+                        <div class="select_field">
+                            <label for="wickets">Select Wickets</label><br>
+                            <select name="wickets" id="wickets">
+                                <option value="1">1</option>
+                                <option value="2" selected>2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+
+                        <div class="select_field">
+                            <label for="overs">Select Overs</label><br>
+                            <select name="overs" id="overs">
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        
+                        <div class="check_box">
+                            <label for="first_bat">Select who want to bat first</label><br>
+                            <input type="radio" name="first_bat" id="A" value="teamA" checked>
+                            <label for="A">Team_A</label><br>
+                            <input type="radio" name="first_bat" id="B" value="teamB">
+                            <label for="B">Team_B</label>
+                        </div>
+                        <button type="submit" class="start-btn" id="startBtn">Start</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-section" id="mainView">
+        <div class="container">
+            <!-- Field section -->
+            <div class="field" id="fieldId">
+                <span class="pointer"></span>
+                <div class="circle" id="circle">
+                    <div class="circle__partition partition--1"></div>
+                    <div class="circle__partition partition--2"></div>
+                    <div class="circle__partition partition--3"></div>
+                    <div class="circle__partition partition--4"></div>
+                    <div class="circle_child circle_child--1">0</div>
+                    <div class="circle_child circle_child--2">2</div>
+                    <div class="circle_child circle_child--3">3</div>
+                    <div class="circle_child circle_child--4">Out</div>
+                    <div class="circle_child circle_child--5">6</div>
+                    <div class="circle_child circle_child--6">1</div>
+                    <div class="circle_child circle_child--7">Out</div>
+                    <div class="circle_child circle_child--8">4</div>
+                </div>
+                <div class="controller">
+                    <h4 class="controller__title" id="info"></h4>
+                    <button class="control-btn" id="play">Play</button>
+                    <button class="control-btn" id="inngs">Start 2nd Inns</button>
+                </div>
+            </div>
+
+            <!-- Result view section -->
+            <div class="result_card" id="result">
+                <div class="result_card__body">
+                    <div class="winingView" id="resultWin">
+                        <h2></h2>
+                        <img class="trophy" src="./images/trophy.png" alt="">
+                    </div>
+                    <div class="drawView" id="resultDraw">
+                        <h2></h2>
+                    </div>
+                    <div>
+                        <button class="play_again-btn" id="playAgainBtn">Play Again</button>
+                        <button class="exit-btn" id="exitBtn">Exit</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Score board section -->
+            <div class="score-board">
+                <h2 class="score-board__title">Score Board</h2>
+                <div class="score">
+                    <div class="score__A" id="A-bg">
+                        <div class="bg-blur">
+                            <h3 class="score__title">Team A</h3>
+                            <ul class="list" id="list-A">
+                                <li class="list__item">Total Run:</li>
+                                <li class="list__item">Wickets:</li>
+                                <li class="list__item">Overs:</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="score__B" id="B-bg">
+                        <div class="bg-blur">
+                            <h3 class="score__title">Team B</h3>
+                            <ul class="list" id="list-B">
+                                <li class="list__item">Total Run:</li>
+                                <li class="list__item">Wickets:</li>
+                                <li class="list__item">Overs:</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
